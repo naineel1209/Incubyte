@@ -3,12 +3,15 @@ import java.util.Scanner;
 public class Pd1 {
   static int x, y, z;
   static String iniDir;
-  static String[] commands = new String[5];
+  static String[] commands;
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
-    System.out.println("Enter the commands: ");
+    System.out.println("Enter the no of commands: ");
+
+    int n = sc.nextInt();
+    commands = new String[n];
 
     for (int i = 0; i < commands.length; i++) {
       commands[i] = sc.next();
@@ -37,6 +40,9 @@ public class Pd1 {
       } else if (commands[i].equals("d")) {
         turn_down();
       }
+
+      System.out.println("Current Position: " + x + " " + y + " " + z);
+      System.out.println("Current Direction: " + iniDir);
     }
 
     System.out.println("Final Position: " + x + " " + y + " " + z);
